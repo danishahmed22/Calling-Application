@@ -12,13 +12,13 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final TextEditingController _numberCtrl = TextEditingController();
+  final TextEditingController numCtrl = TextEditingController();
 
 
   @override
   void initState() {
     super.initState();
-    _numberCtrl.text = "";
+    numCtrl.text = "";
   }
 
   @override
@@ -34,7 +34,7 @@ class _MyAppState extends State<MyApp> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
-                controller: _numberCtrl,
+                controller: numCtrl,
                 decoration: const InputDecoration(labelText: "Enter number"),
                 keyboardType: TextInputType.number,
               ),
@@ -42,7 +42,7 @@ class _MyAppState extends State<MyApp> {
             ElevatedButton(
               child: const Text("Call",),
               onPressed: () async {
-                FlutterPhoneDirectCaller.callNumber(_numberCtrl.text);
+                FlutterPhoneDirectCaller.callNumber(numCtrl.text);
               },
             )
           ],
